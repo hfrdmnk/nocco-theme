@@ -4,10 +4,9 @@
 import "../css/index.css";
 
 // Import JS
-import menuOpen from "./menuOpen";
 import infiniteScroll from "./infiniteScroll";
+import initAccentBar from "./accentBar";
 
-
-// Call the menu and infinite scroll functions
-menuOpen();
+// Initialize features
 infiniteScroll();
+initAccentBar();

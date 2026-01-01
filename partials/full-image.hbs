@@ -1,0 +1,53 @@
+{{!--
+  Full-width Image Partial
+  Usage: {{> full-image src=image alt="description" date="01/01/2000" location="Nice, FR" title="view.jpg"}}
+  Breaks out of content column into bleed columns
+--}}
+
+<figure class="[grid-column:bleed-start/bleed-end] my-8">
+  <picture>
+    <source
+      srcset="
+        {{img_url src size="s" format="avif"}} 300w,
+        {{img_url src size="m" format="avif"}} 600w,
+        {{img_url src size="l" format="avif"}} 1000w,
+        {{img_url src size="xl" format="avif"}} 2000w
+      "
+      sizes="(max-width: 1400px) 100vw, 1400px"
+      type="image/avif"
+    >
+    <source
+      srcset="
+        {{img_url src size="s" format="webp"}} 300w,
+        {{img_url src size="m" format="webp"}} 600w,
+        {{img_url src size="l" format="webp"}} 1000w,
+        {{img_url src size="xl" format="webp"}} 2000w
+      "
+      sizes="(max-width: 1400px) 100vw, 1400px"
+      type="image/webp"
+    >
+    <img
+      src="{{img_url src size="xl"}}"
+      srcset="
+        {{img_url src size="s"}} 300w,
+        {{img_url src size="m"}} 600w,
+        {{img_url src size="l"}} 1000w,
+        {{img_url src size="xl"}} 2000w
+      "
+      sizes="(max-width: 1400px) 100vw, 1400px"
+      alt="{{alt}}"
+      class="w-full"
+      loading="lazy"
+    >
+  </picture>
+  {{#if date}}
+    <figcaption class="flex justify-between text-mono-500 font-mono text-xs mt-2 px-4">
+      <span>{{date}}{{#if location}} {{location}}{{/if}}</span>
+      {{#if title}}<span>{{title}}</span>{{/if}}
+    </figcaption>
+  {{else if title}}
+    <figcaption class="flex justify-end text-mono-500 font-mono text-xs mt-2 px-4">
+      <span>{{title}}</span>
+    </figcaption>
+  {{/if}}
+</figure>

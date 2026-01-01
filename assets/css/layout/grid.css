@@ -1,0 +1,23 @@
+/* 5-column grid layout system
+ * Columns: Nav | Bleed-L | Content | Bleed-R | Marginalia
+ */
+
+.site-grid {
+  display: grid;
+  grid-template-columns:
+    [nav-start] 10rem
+    [nav-end bleed-start] minmax(1.5rem, 1fr)
+    [content-start] min(42rem, 100%)
+    [content-end] minmax(1.5rem, 1fr)
+    [bleed-end margin-start] 10rem
+    [margin-end];
+  min-height: 100vh;
+}
+
+/* Mobile: single column layout */
+@media (max-width: 64rem) {
+  .site-grid {
+    grid-template-columns: 1fr;
+    padding-inline: 1.5rem;
+  }
+}

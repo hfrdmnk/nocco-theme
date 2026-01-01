@@ -232,3 +232,126 @@ figcaption strong {
 .gh-content tbody tr:last-child {
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
+
+
+/* Gallery cards
+/* ---------------------------------------------------------- */
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
+
+
+/* Bookmark cards
+/* ---------------------------------------------------------- */
+
+.kg-bookmark-card,
+.kg-bookmark-publisher {
+    position: relative;
+}
+
+.kg-bookmark-container,
+.kg-bookmark-container:hover {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    color: currentColor;
+    background: rgba(0, 0, 0, 0.03);
+    font-family: var(--font-sans);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.kg-bookmark-content {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+    padding: 1.25rem;
+}
+
+.kg-bookmark-title {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.3em;
+}
+
+.kg-bookmark-description {
+    display: -webkit-box;
+    max-height: 2.7em;
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.35em;
+    overflow: hidden;
+    opacity: 0.7;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.kg-bookmark-metadata {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.kg-bookmark-metadata > *:not(img) {
+    opacity: 0.7;
+}
+
+.kg-bookmark-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.kg-bookmark-author::after {
+    content: "•";
+    margin: 0 0.375rem;
+}
+
+.kg-bookmark-publisher {
+    overflow: hidden;
+    max-width: 15rem;
+    text-overflow: ellipsis;
+}
+
+.kg-bookmark-thumbnail {
+    flex-basis: 15rem;
+    flex-grow: 1;
+    position: relative;
+}
+
+.kg-bookmark-thumbnail img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

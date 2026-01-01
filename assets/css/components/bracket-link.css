@@ -1,0 +1,13 @@
+/* Bracket link component - [ link ] styling */
+
+.bracket-link {
+  @apply font-mono text-sm text-mono-600 hover:text-accent-500 transition-colors;
+}
+
+.bracket-link::before {
+  content: "[ ";
+}
+
+.bracket-link::after {
+  content: " ]";
+}

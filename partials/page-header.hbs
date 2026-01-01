@@ -1,0 +1,109 @@
+{{!--
+  Page Header Partial
+  Used on: index, page, post templates
+  Displays: slug, title, optional back button, optional image, optional metadata
+--}}
+
+<div class="[grid-column:content-start/content-end] relative">
+  {{!-- Orange accent bar - sticky, aligned with title --}}
+  <div
+    class="accent-bar absolute -left-6 top-0 w-1 bg-accent-500 hidden lg:block"
+    style="height: 3.5rem;"
+  ></div>
+
+  {{!-- Slug + back button row --}}
+  <div class="flex justify-between items-center mb-2">
+    <span class="text-accent-500 font-mono text-sm">
+      {{#is "home"}}
+        /
+      {{else}}
+        /{{slug}}
+      {{/is}}
+    </span>
+    {{!-- Back button: home pages go to /, posts go to /feed --}}
+    {{#unless (is "home")}}
+      <a
+        href="{{#is "post"}}{{@site.url}}/feed{{else}}{{@site.url}}{{/is}}"
+        class="bracket-link"
+      >
+        back
+      </a>
+    {{/unless}}
+  </div>
+
+  {{!-- Title --}}
+  <h1 class="font-heading text-4xl lg:text-5xl text-mono-950 leading-tight">
+    {{#is "home"}}
+      {{@site.description}}
+    {{else}}
+      {{title}}
+    {{/is}}
+  </h1>
+</div>
+
+{{!-- Featured image (breaks out of content column) --}}
+{{#if feature_image}}
+  <figure class="[grid-column:bleed-start/bleed-end] mt-8">
+    <picture>
+      <source
+        srcset="
+          {{img_url feature_image size="s" format="avif"}} 300w,
+          {{img_url feature_image size="m" format="avif"}} 600w,
+          {{img_url feature_image size="l" format="avif"}} 1000w,
+          {{img_url feature_image size="xl" format="avif"}} 2000w
+        "
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        type="image/avif"
+      >
+      <source
+        srcset="
+          {{img_url feature_image size="s" format="webp"}} 300w,
+          {{img_url feature_image size="m" format="webp"}} 600w,
+          {{img_url feature_image size="l" format="webp"}} 1000w,
+          {{img_url feature_image size="xl" format="webp"}} 2000w
+        "
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        type="image/webp"
+      >
+      <img
+        src="{{img_url feature_image size="xl"}}"
+        srcset="
+          {{img_url feature_image size="s"}} 300w,
+          {{img_url feature_image size="m"}} 600w,
+          {{img_url feature_image size="l"}} 1000w,
+          {{img_url feature_image size="xl"}} 2000w
+        "
+        sizes="(max-width: 1400px) 100vw, 1400px"
+        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+        class="w-full"
+      >
+    </picture>
+    {{#if feature_image_caption}}
+      <figcaption class="flex justify-between text-mono-500 font-mono text-xs mt-2 px-4">
+        <span>{{{feature_image_caption}}}</span>
+      </figcaption>
+    {{/if}}
+  </figure>
+{{/if}}
+
+{{!-- Post metadata row --}}
+{{#is "post"}}
+  <div class="[grid-column:content-start/content-end] flex flex-wrap gap-6 mt-6 text-mono-500 font-mono text-sm">
+    <span class="flex items-center gap-2">
+      {{> icons/calendar}}
+      <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at timeago="true"}}</time>
+    </span>
+    <span class="flex items-center gap-2">
+      {{> icons/clock}}
+      {{reading_time}}
+    </span>
+    {{#if tags}}
+      <span class="flex items-center gap-2">
+        {{> icons/tag}}
+        {{#foreach tags}}
+          <a href="{{url}}" class="hover:text-accent-500 transition-colors">{{name}}</a>{{#unless @last}},{{/unless}}
+        {{/foreach}}
+      </span>
+    {{/if}}
+  </div>
+{{/is}}
