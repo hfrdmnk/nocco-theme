@@ -1,0 +1,38 @@
+{
+  "assets/fonts/DepartureMono-Regular.woff2": {
+    "file": "DepartureMono-Regular-2BZob_Zz.woff2",
+    "src": "assets/fonts/DepartureMono-Regular.woff2"
+  },
+  "assets/fonts/HostGrotesk-Italic-VariableFont_wght.ttf": {
+    "file": "HostGrotesk-Italic-VariableFont_wght-ClsWsQhZ.ttf",
+    "src": "assets/fonts/HostGrotesk-Italic-VariableFont_wght.ttf"
+  },
+  "assets/fonts/HostGrotesk-VariableFont_wght.ttf": {
+    "file": "HostGrotesk-VariableFont_wght-c3nXu1KX.ttf",
+    "src": "assets/fonts/HostGrotesk-VariableFont_wght.ttf"
+  },
+  "assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf": {
+    "file": "Inter-Italic-VariableFont_opsz_wght-B-9PvMw6.ttf",
+    "src": "assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf"
+  },
+  "assets/fonts/Inter-VariableFont_opsz,wght.ttf": {
+    "file": "Inter-VariableFont_opsz_wght-c8O0ljhh.ttf",
+    "src": "assets/fonts/Inter-VariableFont_opsz,wght.ttf"
+  },
+  "assets/js/index.js": {
+    "file": "index-Ewmv3d85.js",
+    "name": "index",
+    "src": "assets/js/index.js",
+    "isEntry": true,
+    "css": [
+      "index-DWFpjhAp.css"
+    ],
+    "assets": [
+      "Inter-VariableFont_opsz_wght-c8O0ljhh.ttf",
+      "Inter-Italic-VariableFont_opsz_wght-B-9PvMw6.ttf",
+      "HostGrotesk-VariableFont_wght-c3nXu1KX.ttf",
+      "HostGrotesk-Italic-VariableFont_wght-ClsWsQhZ.ttf",
+      "DepartureMono-Regular-2BZob_Zz.woff2"
+    ]
+  }
+}

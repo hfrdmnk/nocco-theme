@@ -6,31 +6,31 @@ production stylesheet in assets/built/screen.css using: npm run dev
 */
 
 /* Fonts must come first */
-@import "fonts.css";
+@import "./fonts.css";
 
 /* Tailwind base */
 @import "tailwindcss";
 
 /* Base components */
-@import "vars.css";
-@import "components/global.css";
-@import "components/forms.css";
-@import "components/buttons.css";
-@import "components/bracket-link.css";
+@import "./vars.css";
+@import "./components/global.css";
+@import "./components/forms.css";
+@import "./components/buttons.css";
+@import "./components/bracket-link.css";
 
 /* Layout */
-@import "layout/grid.css";
+@import "./layout/grid.css";
 
 /* Ghost components */
-@import "ghost/header.css";
-@import "ghost/content.css";
-@import "ghost/readmore.css";
-@import "ghost/members.css";
-@import "ghost/errors.css";
-@import "ghost/footer.css";
-@import "ghost/badge.css";
-@import "ghost/pagination.css";
-@import "ghost/comments.css";
+@import "./ghost/header.css";
+@import "./ghost/content.css";
+@import "./ghost/readmore.css";
+@import "./ghost/members.css";
+@import "./ghost/errors.css";
+@import "./ghost/footer.css";
+@import "./ghost/badge.css";
+@import "./ghost/pagination.css";
+@import "./ghost/comments.css";
 
 /* Customize Tailwind theme */
 @theme {

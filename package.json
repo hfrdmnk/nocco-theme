@@ -1,7 +1,6 @@
 {
-    "name": "ghost-starter-theme",
-    "description": "A starter theme for Ghost theme development",
-    "demo": "https://starter.ghost.io",
+    "name": "nocco",
+    "description": "Theme for dominikhofer.me",
     "version": "1.0.0",
     "engines": {
         "ghost": ">=5.0.0"
@@ -11,11 +10,11 @@
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
-        "dev": "rollup -c --environment BUILD:development -w",
-        "build": "rollup -c --environment BUILD:production",
-        "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
-        "test": "npx gscan .",
-        "pretest": "npm run build"
+        "dev": "vite",
+        "build": "vite build",
+        "zip": "pnpm build && bestzip $npm_package_name.zip assets/* partials/* members/* lib/* *.hbs package.json",
+        "test": "pnpm dlx gscan .",
+        "pretest": "pnpm build"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -41,19 +40,10 @@
     "bugs": "https://github.com/TryGhost/Starter/issues",
     "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
     "devDependencies": {
-        "@babel/core": "^7.21.0",
-        "@babel/preset-env": "^7.20.2",
-        "@rollup/plugin-babel": "^6.0.3",
-        "@rollup/plugin-commonjs": "^25.0.0",
-        "@rollup/plugin-node-resolve": "^15.0.1",
-        "@rollup/plugin-terser": "^0.4.0",
+        "@tailwindcss/vite": "^4.1.18",
         "bestzip": "^2.2.1",
-        "postcss": "^8.4.24",
-        "postcss-import": "^15.1.0",
-        "postcss-preset-env": "^8.0.1",
-        "rollup": "^3.18.0",
-        "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-postcss": "^4.0.2"
+        "vite": "^7.3.0",
+        "vite-plugin-restart": "^2.0.0"
     },
     "browserslist": [
         "defaults"
@@ -61,6 +51,13 @@
     "config": {
         "card_assets": true,
         "posts_per_page": 15,
+        "custom": {
+            "development_mode": {
+                "type": "boolean",
+                "default": false,
+                "description": "Enable to load assets from Vite dev server (localhost:5173)"
+            }
+        },
         "image_sizes": {
             "xxs": {
                 "width": 30
@@ -84,7 +81,6 @@
     },
     "type": "module",
     "dependencies": {
-        "@tailwindcss/postcss": "^4.1.18",
         "@tailwindcss/typography": "^0.5.19",
         "tailwindcss": "^4.1.18"
     }

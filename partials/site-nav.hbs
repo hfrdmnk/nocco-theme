@@ -1,6 +1,7 @@
 {{!-- Desktop sidebar navigation --}}
-<aside class="[grid-column:nav-start/nav-end] hidden lg:block sticky top-8 self-start pt-8">
-  <nav class="flex flex-col gap-1 font-mono text-sm">
+<aside class="[grid-column:nav-start/nav-end] [grid-row:1/-1] hidden lg:block sticky top-8 self-start pt-8">
+  <a href="{{@site.url}}" class="text-mono-600 hover:text-accent-500 transition-colors font-mono text-sm">/</a>
+  <nav class="flex flex-col gap-1 font-mono text-sm mt-2">
     {{#foreach navigation}}
       <a
         href="{{url}}"

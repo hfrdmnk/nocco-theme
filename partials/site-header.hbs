@@ -1,4 +1,4 @@
-<header class="[grid-column:content-start/content-end] flex justify-between items-start py-8">
+<header class="[grid-column:content-start/content-end] [grid-row:1] flex justify-between items-start py-8">
   <div>
     <a href="{{@site.url}}" class="text-accent-500 font-heading text-lg hover:underline">Dominik Hofer</a>
     <div class="text-mono-500 font-mono text-sm">
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="flex items-center gap-4">
-    <span class="text-mono-600 font-mono text-sm hidden sm:block">Trust the Process.</span>
+    <span class="text-accent-500 font-mono text-sm hidden sm:block">Trust the Process.</span>
     {{!-- Mobile hamburger button --}}
     <button
       @click="navOpen = !navOpen"

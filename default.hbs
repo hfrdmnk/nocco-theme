@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{meta_title}}</title>
+    {{!-- Production: Load built assets --}}
+    {{#unless @custom.development_mode}}
+    {{> "vite_assets/head"}}
+    {{/unless}}
 
-    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
-    <script src="{{asset "built/index.js"}}" defer></script>
+    <title>{{meta_title}}</title>
 
     {{!-- Alpine.js for interactive components --}}
     <script defer src="{{asset "js/alpine.js"}}"></script>
@@ -29,7 +31,7 @@
         {{> site-header}}
 
         {{!-- Main content area --}}
-        <main class="[grid-column:content-start/content-end] min-h-[50vh]">
+        <main class="[grid-column:content-start/content-end] [grid-row:2] min-h-[50vh]">
             {{{body}}}
         </main>
 
@@ -38,6 +40,15 @@
 
     </div>
 </div>
+
+{{#if @custom.development_mode}}
+{{!-- Development: Load from Vite dev server --}}
+<script type="module" src="http://localhost:5173/@vite/client"></script>
+<script type="module" src="http://localhost:5173/assets/js/index.js"></script>
+{{else}}
+{{!-- Production: Load built assets --}}
+{{> "vite_assets/foot"}}
+{{/if}}
 
 {{ghost_foot}}
 

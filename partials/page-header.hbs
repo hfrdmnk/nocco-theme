@@ -21,14 +21,14 @@
       {{/is}}
     </span>
     {{!-- Back button: home pages go to /, posts go to /feed --}}
-    {{#unless (is "home")}}
+    {{^is "home"}}
       <a
         href="{{#is "post"}}{{@site.url}}/feed{{else}}{{@site.url}}{{/is}}"
         class="bracket-link"
       >
         back
       </a>
-    {{/unless}}
+    {{/is}}
   </div>
 
   {{!-- Title --}}

@@ -1,5 +1,6 @@
 /* 5-column grid layout system
  * Columns: Nav | Bleed-L | Content | Bleed-R | Marginalia
+ * Rows: Header | Main (flexible) | Footer
  */
 
 .site-grid {
@@ -11,6 +12,7 @@
     [content-end] minmax(1.5rem, 1fr)
     [bleed-end margin-start] 10rem
     [margin-end];
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 
