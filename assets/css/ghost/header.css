@@ -3,7 +3,7 @@
 
 .gh-head {
     padding: 3vmin 4vmin;
-    font-size: 1.6rem;
+    font-size: 1rem;
     line-height: 1.3em;
     background: inherit;
 }
@@ -37,7 +37,7 @@
     display: block;
     padding: 10px 0;
     font-weight: 600;
-    font-size: 2.2rem;
+    font-size: 1.375rem;
     line-height: 1.2em;
 }
 
@@ -136,7 +136,7 @@
     width: 100%;
     height: 1px;
     background: currentcolor;
-    transition: transform 300ms cubic-bezier(.2,.6,.3,1), width 300ms cubic-bezier(.2,.6,.3,1);
+    transition: transform 300ms cubic-bezier(.2, .6, .3, 1), width 300ms cubic-bezier(.2, .6, .3, 1);
     will-change: transform, width;
 }
 
@@ -152,13 +152,14 @@
     width: 100%;
     height: 1px;
     background: currentcolor;
-    transition: transform 250ms cubic-bezier(.2,.7,.3,1), width 250ms cubic-bezier(.2,.7,.3,1);
+    transition: transform 250ms cubic-bezier(.2, .7, .3, 1), width 250ms cubic-bezier(.2, .7, .3, 1);
     will-change: transform, width;
 }
 
 .gh-burger-inner::before {
     transform: translatey(-6px);
 }
+
 .gh-burger-inner::after {
     transform: translatey(6px);
 }
@@ -166,6 +167,7 @@
 body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::before {
     transform: translatey(-8px);
 }
+
 body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     transform: translatey(8px);
 }
@@ -173,7 +175,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .gh-head-open .gh-burger-box::before {
     width: 0;
     transform: translatex(19px);
-    transition: transform 200ms cubic-bezier(.2,.7,.3,1), width 200ms cubic-bezier(.2,.7,.3,1);
+    transition: transform 200ms cubic-bezier(.2, .7, .3, 1), width 200ms cubic-bezier(.2, .7, .3, 1);
 }
 
 .gh-head-open .gh-burger-inner::before {
@@ -198,12 +200,15 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     grid-gap: 0;
     grid-template-columns: auto max-content max-content;
 }
+
 .gh-head-brandnav .gh-head-brand {
-     grid-column-start: 1;
+    grid-column-start: 1;
 }
+
 .gh-head-brandnav .gh-head-menu {
     margin-left: 40px;
 }
+
 .gh-head-brandnav .gh-head-menu .nav li {
     margin: 0 0 0 1.5vmin;
     padding: 0;
@@ -214,19 +219,22 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     grid-template-columns: 1fr;
     grid-gap: 2vmin;
 }
+
 .gh-head-stacked .gh-head-brand {
-     grid-column-start: 1;
-     width: 100%;
-     max-width: none;
-     display: flex;
-     justify-content: center;
-     text-align: center;
+    grid-column-start: 1;
+    width: 100%;
+    max-width: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
+
 .gh-head-stacked .gh-head-menu,
 .gh-head-stacked .gh-head-actions,
 .gh-head-stacked .gh-head-actions-list {
     justify-content: center;
 }
+
 .gh-head-stacked .gh-head-actions a:first-child svg {
     margin-left: 0;
 }
@@ -240,14 +248,17 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .gh-burger {
         display: inline-block;
     }
+
     #gh-head {
         transition: all 0.4s ease-out;
         overflow: hidden;
     }
+
     #gh-head .gh-head-inner {
         height: 100%;
         grid-template-columns: 1fr;
     }
+
     #gh-head .gh-head-brand {
         position: relative;
         z-index: 10;
@@ -258,12 +269,15 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         justify-content: space-between;
         user-select: none;
     }
+
     #gh-head .gh-head-logo {
-        font-size: 2.2rem;
+        font-size: 1.375rem;
     }
+
     #gh-head .gh-head-logo img {
         max-height: 40px;
     }
+
     #gh-head .gh-head-menu {
         align-self: center;
         display: flex;
@@ -272,38 +286,46 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         text-align: center;
         margin: 0 0 10vh 0;
         font-weight: 300;
-        font-size: 3.6rem;
+        font-size: 2.25rem;
         line-height: 1.1em;
     }
+
     #gh-head .gh-head-menu .nav li {
         margin: 5px 0;
     }
+
     #gh-head .gh-head-menu .nav a {
         padding: 8px 0;
     }
+
     #gh-head .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     #gh-head .gh-head-actions {
         padding: 20px 0;
         justify-content: center;
         text-align: left;
     }
+
     #gh-head .gh-head-actions a {
         margin: 0 10px;
     }
+
     /* Hide collapsed content */
     #gh-head .gh-head-actions,
     #gh-head .gh-head-menu {
         display: none;
     }
+
     /* Open the menu */
     .gh-head-open {
         overflow: hidden;
         height: 100vh;
     }
+
     .gh-head-open #gh-head {
         position: fixed;
         top: 0;
@@ -313,9 +335,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         z-index: 900;
         overflow-y: scroll;
     }
+
     .gh-head-open #gh-head .gh-head-inner {
         grid-template-rows: auto 1fr auto;
     }
+
     .gh-head-open #gh-head .gh-head-actions,
     .gh-head-open #gh-head .gh-head-menu {
         display: flex;

@@ -5,12 +5,12 @@
     display: inline-block;
     min-width: 75px;
     height: var(--height);
-    padding: 0 2rem;
+    padding: 0 1.25rem;
     border: 0;
     border-radius: var(--radius);
     cursor: pointer;
     font-family: var(--font-sans-serif);
-    font-size: 1.4rem;
+    font-size: 0.875rem;
     font-weight: var(--font-normal);
     line-height: var(--height);
     text-align: center;
@@ -27,15 +27,15 @@
 .gh-button.gh-button-small {
     height: calc(var(--height) * 0.9);
     line-height: calc(var(--height) * 0.9);
-    padding: 0 1.5rem;
-    font-size: 1.2rem;
+    padding: 0 0.9375rem;
+    font-size: 0.75rem;
 }
 
 .gh-button.gh-button-large {
     height: calc(var(--height) * 1.2);
     line-height: calc(var(--height) * 1.2);
-    padding: 0 2.5rem;
-    font-size: 1.7rem;
+    padding: 0 1.5625rem;
+    font-size: 1.0625rem;
 }
 
 .gh-button.gh-button-disabled,

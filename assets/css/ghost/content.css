@@ -39,7 +39,7 @@
 }
 
 .gh-content>[id]+* {
-    margin-top: 1.5rem;
+    margin-top: 0.9375rem;
 }
 
 .gh-content [id]+.kg-card,
@@ -54,7 +54,7 @@
 .gh-canvas>p {
     font-family: var(--font-serif);
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.25rem;
     line-height: 1.6em;
 }
 
@@ -83,7 +83,7 @@
     left: -1.5em;
     top: 0;
     bottom: 0;
-    width: 0.3rem;
+    width: 0.1875rem;
     background: var(--color-primary);
 }
 
@@ -94,7 +94,7 @@
     .gh-canvas ul,
     .gh-canvas dl,
     .gh-canvas p {
-        font-size: 1.8rem;
+        font-size: 1.125rem;
     }
 
     .gh-content blockquote::before {
@@ -115,11 +115,11 @@
 }
 
 figcaption {
-    padding: 1.5rem 1.5rem 0;
+    padding: 0.9375rem 0.9375rem 0;
     text-align: center;
     color: rgba(0, 0, 0, 0.5);
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: 0.8125rem;
     line-height: 1.4em;
 }
 

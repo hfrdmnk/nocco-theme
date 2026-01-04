@@ -77,6 +77,11 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
 
+
+h1 {
+    @apply font-heading font-normal;
+}
+
 html,
 .gh-viewport {
     display: flex;
@@ -124,7 +129,7 @@ html,
 }
 
 .gh-head-actions a svg {
-    height: 1.8rem;
+    height: 1.125rem;
     fill: currentcolor;
 }
 
@@ -133,7 +138,7 @@ html,
 }
 
 .gh-head-actions a:last-child svg {
-    height: 2rem;
+    height: 1.25rem;
 }
 
 /* Index
@@ -163,8 +168,8 @@ html,
 
 .gh-card-meta {
     display: block;
-    margin: 0 0 1rem;
-    font-size: 1.4rem;
+    margin: 0 0 0.625rem;
+    font-size: 0.875rem;
     line-height: 1.2em;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -175,11 +180,11 @@ html,
     max-width: 720px;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1rem;
 }
 
 .gh-card-content p {
-    margin: 1.2rem 0;
+    margin: 0.75rem 0;
     padding: 0 3vmin;
 }
 
@@ -216,7 +221,7 @@ html,
 
 @media (max-width: 700px) {
     .gh-page-head>p {
-        font-size: 1.6rem;
+        font-size: 1rem;
     }
 }
 
@@ -231,15 +236,15 @@ html,
 
 .gh-post-meta {
     display: block;
-    margin: 0 0 1rem;
-    font-size: 1.4rem;
+    margin: 0 0 0.625rem;
+    font-size: 0.875rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     opacity: 0.8;
 }
 
 .gh-excerpt {
-    margin: 1rem 0 0 0;
+    margin: 0.625rem 0 0 0;
 }
 
 .gh-feature-image {
@@ -254,7 +259,7 @@ html,
 }
 
 .gh-post-footer {
-    margin: 2rem 0;
+    margin: 1.25rem 0;
 }
 
 
@@ -300,6 +305,6 @@ html,
 
 @media (max-width: 700px) {
     .gh-author-meta {
-        font-size: 1.6rem;
+        font-size: 1rem;
     }
 }

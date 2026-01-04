@@ -1,10 +1,10 @@
 /* Global Grid Layout System
- * 7-column grid with content (65ch), marginalia (2rem), and outer fill columns
+ * 7-column grid with content (65ch), marginalia (1.25rem), and outer fill columns
  *
  * Columns at lg (≥90rem):
- * | 1fr | 2rem | gap | 65ch | gap | 2rem | 1fr |
- *   ^      ^            ^            ^      ^
- *  full  wide       content       wide   full
+ * | 1fr | 1.25rem | gap | 65ch | gap | 1.25rem | 1fr |
+ *   ^       ^             ^             ^        ^
+ *  full   wide        content        wide      full
  *
  * Named grid lines:
  * - full-start/full-end: edge to edge
@@ -16,8 +16,8 @@
 .site-grid {
     display: grid;
     grid-template-columns:
-        [full-start] 1fr [wide-start] 2rem [content-start] 65ch [content-end] 2rem [wide-end] 1fr [full-end];
-    column-gap: 2rem;
+        [full-start] 1fr [wide-start] 1.25rem [content-start] 65ch [content-end] 1.25rem [wide-end] 1fr [full-end];
+    column-gap: 1.25rem;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
@@ -26,7 +26,7 @@
 @media (max-width: 89.9375rem) {
     .site-grid {
         grid-template-columns:
-            [full-start wide-start] 2rem [content-start] 65ch [content-end] 2rem [wide-end full-end];
+            [full-start wide-start] 1.25rem [content-start] 65ch [content-end] 1.25rem [wide-end full-end];
     }
 }
 
@@ -35,7 +35,7 @@
     .site-grid {
         grid-template-columns: [full-start wide-start content-start] 1fr [content-end wide-end full-end];
         column-gap: 0;
-        padding-inline: 1rem;
+        padding-inline: 0.625rem;
     }
 }
 
