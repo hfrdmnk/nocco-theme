@@ -10,7 +10,7 @@
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
-        "dev": "vite",
+        "dev": "vite build --watch",
         "build": "vite build",
         "zip": "pnpm build && bestzip $npm_package_name.zip assets/* partials/* members/* lib/* *.hbs package.json",
         "test": "pnpm dlx gscan .",

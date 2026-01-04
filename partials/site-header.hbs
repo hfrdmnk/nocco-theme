@@ -1,44 +1,55 @@
-<header class="[grid-column:content-start/content-end] [grid-row:1] flex justify-between items-start py-8">
-  <div>
-    <a href="{{@site.url}}" class="text-accent-500 font-heading text-lg hover:underline">Dominik Hofer</a>
-    <div class="text-mono-500 font-mono text-sm">
-      <span
-        x-data="{ time: '--:--' }"
-        x-init="
+<header class="grid-content flex justify-between items-end py-8">
+    <div>
+        <a
+            href="{{@site.url}}"
+            class="text-accent-500 text-sm font-mono"
+        >Dominik Hofer</a>
+        <div class="text-mono-500 font-mono text-sm">
+            <span
+                x-data="{ time: '--:--' }"
+                x-init="
           const update = () => time = new Date().toLocaleTimeString('de-CH', { hour: '2-digit', minute: '2-digit', hour12: false });
           update();
           setInterval(update, 60000);
         "
-        x-text="time"
-      ></span> – Bern, CH
+                x-text="time"
+            ></span>
+            – Bern, CH
+        </div>
     </div>
-  </div>
-  <div class="flex items-center gap-4">
-    <span class="text-accent-500 font-mono text-sm hidden sm:block">Trust the Process.</span>
-    {{!-- Mobile hamburger button --}}
-    <button
-      @click="navOpen = !navOpen"
-      class="lg:hidden p-2 -mr-2 text-mono-600 hover:text-accent-500"
-      :aria-expanded="navOpen"
-      aria-label="Toggle navigation"
-    >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          x-show="!navOpen"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-        <path
-          x-show="navOpen"
-          x-cloak
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg>
-    </button>
-  </div>
+    <div class="flex gap-4">
+        <div
+            class="text-accent-500 font-mono text-sm hidden sm:block mt-auto"
+        >Trust the Process.</div>
+        {{! Mobile hamburger button }}
+        <button
+            @click="navOpen = !navOpen"
+            class="lg:hidden p-2 -mr-2 text-mono-600 hover:text-accent-500"
+            :aria-expanded="navOpen"
+            aria-label="Toggle navigation"
+        >
+            <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    x-show="!navOpen"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+                <path
+                    x-show="navOpen"
+                    x-cloak
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                />
+            </svg>
+        </button>
+    </div>
 </header>

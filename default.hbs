@@ -20,7 +20,7 @@
 <body class="{{body_class}}" x-data="{ navOpen: false }">
 
 {{!-- Main wrapper with max-width 90rem for centering --}}
-<div class="mx-auto max-w-[90rem]">
+<div class="mx-auto max-w-360">
     {{!-- 7-column grid layout --}}
     <div class="site-grid">
 
@@ -31,7 +31,7 @@
         {{> site-header}}
 
         {{!-- Main content area --}}
-        <main class="grid-content [grid-row:2] min-h-[50vh]">
+        <main class="grid-content row-2 min-h-[50vh]">
             {{{body}}}
         </main>
 

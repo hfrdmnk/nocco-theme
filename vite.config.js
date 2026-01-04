@@ -17,6 +17,9 @@ export default defineConfig({
     rollupOptions: {
       input: "assets/js/index.js",
     },
+    watch: {
+      exclude: ["assets/built/**", "partials/vite_assets/**"],
+    },
   },
   plugins: [
     ViteRestart({
