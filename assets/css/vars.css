@@ -21,12 +21,11 @@
     --font-bold: 700;
     --font-heavy: 800;
 
-    /* Breakpoints */
-    --xlarge: 1680px;
-    --large: 1280px;
-    --medium: 980px;
-    --small: 740px;
-    --xsmall: 480px;
+    /* Breakpoints - aligned with Tailwind and grid */
+    --breakpoint-sm: 50rem;
+    /* 800px - 5-column grid */
+    --breakpoint-lg: 90rem;
+    /* 1440px - full 7-column grid */
 
     /* Sizes */
     --height: 4rem;

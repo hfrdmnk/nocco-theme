@@ -2,6 +2,7 @@
 
 {{#post}}
 <article class="{{post_class}}">
+    {{#if @page.show_title_and_feature_image}}
     {{!-- Page header with title and optional featured image --}}
     {{> page-header}}
 
@@ -9,9 +10,10 @@
     {{#if custom_excerpt}}
         <p class="text-mono-600 text-lg mt-4">{{custom_excerpt}}</p>
     {{/if}}
+    {{/if}}
 
-    {{!-- Page content --}}
-    <div class="mt-8 prose prose-mono max-w-none">
+    {{!-- Page content with subgrid for full-width images --}}
+    <div class="gh-canvas gh-content mt-8 prose prose-mono max-w-none">
         {{content}}
     </div>
 </article>

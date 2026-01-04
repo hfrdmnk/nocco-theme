@@ -34,36 +34,42 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Customize Tailwind theme */
 @theme {
-  /* Fonts */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-mono: "Departure Mono", Menlo, Courier, monospace;
-  --font-heading: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    /* Breakpoints - aligned with grid responsive behavior */
+    --breakpoint-sm: 50rem;
+    /* 5-column grid with marginalia */
+    --breakpoint-lg: 90rem;
+    /* full 7-column grid */
 
-  /* Colors - Accent (International Orange) */
-  --color-accent-50: #fff7ec;
-  --color-accent-100: #ffedd3;
-  --color-accent-200: #ffd6a5;
-  --color-accent-300: #ffb96d;
-  --color-accent-400: #ff8f32;
-  --color-accent-500: #ff6f0a;
-  --color-accent-600: #ff5500;
-  --color-accent-700: #cc3b02;
-  --color-accent-800: #a12f0b;
-  --color-accent-900: #82290c;
-  --color-accent-950: #461104;
+    /* Fonts */
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-mono: "Departure Mono", Menlo, Courier, monospace;
+    --font-heading: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
 
-  /* Colors - Mono (Spring Wood) */
-  --color-mono-50: #f7f7f3;
-  --color-mono-100: #edeee6;
-  --color-mono-200: #dcdccc;
-  --color-mono-300: #c6c5ab;
-  --color-mono-400: #afab88;
-  --color-mono-500: #9e9771;
-  --color-mono-600: #918865;
-  --color-mono-700: #796f55;
-  --color-mono-800: #645b48;
-  --color-mono-900: #524c3c;
-  --color-mono-950: #2b271f;
+    /* Colors - Accent (International Orange) */
+    --color-accent-50: #fff7ec;
+    --color-accent-100: #ffedd3;
+    --color-accent-200: #ffd6a5;
+    --color-accent-300: #ffb96d;
+    --color-accent-400: #ff8f32;
+    --color-accent-500: #ff6f0a;
+    --color-accent-600: #ff5500;
+    --color-accent-700: #cc3b02;
+    --color-accent-800: #a12f0b;
+    --color-accent-900: #82290c;
+    --color-accent-950: #461104;
+
+    /* Colors - Mono (Spring Wood) */
+    --color-mono-50: #f7f7f3;
+    --color-mono-100: #edeee6;
+    --color-mono-200: #dcdccc;
+    --color-mono-300: #c6c5ab;
+    --color-mono-400: #afab88;
+    --color-mono-500: #9e9771;
+    --color-mono-600: #918865;
+    --color-mono-700: #796f55;
+    --color-mono-800: #645b48;
+    --color-mono-900: #524c3c;
+    --color-mono-950: #2b271f;
 }
 
 
@@ -100,7 +106,7 @@ html,
     padding: 8vmin 0;
 }
 
-.gh-postfeed > *:first-child {
+.gh-postfeed>*:first-child {
     grid-column: 1 / -1;
 }
 
@@ -177,7 +183,7 @@ html,
     padding: 0 3vmin;
 }
 
-.gh-card-content > strong {
+.gh-card-content>strong {
     display: inline-block;
     padding: 1px 0;
     font-weight: 500;
@@ -199,7 +205,7 @@ html,
     margin: 4vmin 0 0 0;
 }
 
-.gh-page-head > p {
+.gh-page-head>p {
     max-width: 720px;
     margin: 0.3em auto 0;
     padding: 0 6vmin;
@@ -209,7 +215,7 @@ html,
 }
 
 @media (max-width: 700px) {
-    .gh-page-head > p {
+    .gh-page-head>p {
         font-size: 1.6rem;
     }
 }
@@ -282,13 +288,13 @@ html,
     margin: 0 0.75vmin;
 }
 
-.gh-author-links a + a:before {
+.gh-author-links a+a:before {
     display: block;
     content: "";
     margin: 0 1.25vmin 0 0;
     height: 1em;
     width: 1px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     transform: rotate(20deg);
 }
 

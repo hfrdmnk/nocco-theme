@@ -1,25 +1,73 @@
-/* 5-column grid layout system
- * Columns: Nav | Bleed-L | Content | Bleed-R | Marginalia
- * Rows: Header | Main (flexible) | Footer
+/* Global Grid Layout System
+ * 7-column grid with content (65ch), marginalia (2rem), and outer fill columns
+ *
+ * Columns at lg (≥90rem):
+ * | 1fr | 2rem | gap | 65ch | gap | 2rem | 1fr |
+ *   ^      ^            ^            ^      ^
+ *  full  wide       content       wide   full
+ *
+ * Named grid lines:
+ * - full-start/full-end: edge to edge
+ * - wide-start/wide-end: marginalia to marginalia (for full-width images)
+ * - content-start/content-end: main content column
  */
 
+/* Full 7-column grid (lg: ≥90rem) */
 .site-grid {
-  display: grid;
-  grid-template-columns:
-    [nav-start] 10rem
-    [nav-end bleed-start] minmax(1.5rem, 1fr)
-    [content-start] min(42rem, 100%)
-    [content-end] minmax(1.5rem, 1fr)
-    [bleed-end margin-start] 10rem
-    [margin-end];
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+    display: grid;
+    grid-template-columns:
+        [full-start] 1fr [wide-start] 2rem [content-start] 65ch [content-end] 2rem [wide-end] 1fr [full-end];
+    column-gap: 2rem;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
-/* Mobile: single column layout */
-@media (max-width: 64rem) {
-  .site-grid {
-    grid-template-columns: 1fr;
-    padding-inline: 1.5rem;
-  }
+/* 5-column grid (sm to lg: 50rem to 90rem) */
+@media (max-width: 89.9375rem) {
+    .site-grid {
+        grid-template-columns:
+            [full-start wide-start] 2rem [content-start] 65ch [content-end] 2rem [wide-end full-end];
+    }
+}
+
+/* Single column (below sm: <50rem) */
+@media (max-width: 49.9375rem) {
+    .site-grid {
+        grid-template-columns: [full-start wide-start content-start] 1fr [content-end wide-end full-end];
+        column-gap: 0;
+        padding-inline: 1rem;
+    }
+}
+
+/* Grid placement utilities */
+.grid-content {
+    grid-column: content-start / content-end;
+}
+
+.grid-wide {
+    grid-column: wide-start / wide-end;
+}
+
+.grid-full {
+    grid-column: full-start / full-end;
+}
+
+/* Subgrid support for content containers */
+.grid-subgrid {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: full-start / full-end;
+}
+
+.grid-subgrid>* {
+    grid-column: content-start / content-end;
+}
+
+.grid-subgrid>.grid-wide,
+.grid-subgrid>.kg-width-full {
+    grid-column: wide-start / wide-end;
+}
+
+.grid-subgrid>.grid-full {
+    grid-column: full-start / full-end;
 }

@@ -19,19 +19,19 @@
 </head>
 <body class="{{body_class}}" x-data="{ navOpen: false }">
 
-{{!-- Main wrapper with max-width for centering --}}
-<div class="mx-auto max-w-[87.5rem] px-4 lg:px-8">
-    {{!-- 5-column grid layout --}}
+{{!-- Main wrapper with max-width 90rem for centering --}}
+<div class="mx-auto max-w-[90rem]">
+    {{!-- 7-column grid layout --}}
     <div class="site-grid">
 
-        {{!-- Left navigation sidebar --}}
+        {{!-- Sidebar navigation (lg: in left outer column, below: mobile overlay) --}}
         {{> site-nav}}
 
         {{!-- Site header --}}
         {{> site-header}}
 
         {{!-- Main content area --}}
-        <main class="[grid-column:content-start/content-end] [grid-row:2] min-h-[50vh]">
+        <main class="grid-content [grid-row:2] min-h-[50vh]">
             {{{body}}}
         </main>
 

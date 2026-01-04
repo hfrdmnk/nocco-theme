@@ -51,6 +51,7 @@
     "config": {
         "card_assets": true,
         "posts_per_page": 15,
+        "custom_fonts": false,
         "custom": {
             "development_mode": {
                 "type": "boolean",
